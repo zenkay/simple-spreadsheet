@@ -1,3 +1,5 @@
+require 'simple_spreadsheet/engine_module_roo'
+
 class ExcelxReader < SpreadsheetReader
   
   def initialize(file)
@@ -5,6 +7,6 @@ class ExcelxReader < SpreadsheetReader
     @engine = Excelx.new(file) # Roo
   end
 
-  # require 'engine_module_roo'
-  
+  include EngineModuleRoo
+
 end

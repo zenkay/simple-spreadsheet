@@ -1,3 +1,3 @@
 class ExcelxmlReader < SpreadsheetReader
-  
+
 end

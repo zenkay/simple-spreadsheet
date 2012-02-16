@@ -4,44 +4,42 @@ module SimpleSpreadsheet
   
   class SimpleSheet
     
-    READ_ONLY = "r"
-    READ_AND_WRITE = "rw"
-    WRITE_ONLY = "w"
+    # READ_ONLY = "r"
+    # READ_AND_WRITE = "rw"
+    # WRITE_ONLY = "w"
+    # 
+    # def self.create(file, mode = READ_ONLY)
+    #   @mode = mode
+    #   case @mode
+    #   when READ_ONLY
+    #     self.init_reader(file)
+    #   when READ_AND_WRITE
+    #     self.init_editor(file)
+    #   when WRITE_ONLY
+    #     self.init_writer(file)
+    #   else
+    #     raise NotRecognizedModeException
+    #   end
+    # end
     
-    def initialize(file, mode = READ_ONLY)
-      @mode = mode
-      case @mode
-      when READ_ONLY
-        @engine = self.init_reader(file)
-      when READ_AND_WRITE
-        @engine = self.init_editor(file)
-      when WRITE_ONLY
-        @engine = self.init_writer(file)
-      else
-        raise NotRecognizedModeException
-      end
-    end
-    
-    protected
-    
-    def init_reader(file)
+    def self.read(file)
       case File.extname(file)
       when '.xls'
-        ExcelReader.new(file)
+        return ExcelReader.new(file)
       when '.xlsx'
-        ExcelxReader.new(file)
+        return ExcelxReader.new(file)
       when '.ods'
-        OpenofficeReader.new(file)
+        return OpenofficeReader.new(file)
       when '.csv'
-        CsvReader.new(file)
+        return CsvReader.new(file)
       when '.xml'
-        ExcelxmlReader.new(file)
+        return ExcelxmlReader.new(file)
       else
-        GoogleReader.new(file)
+        return GoogleReader.new(file)
       end
     end
 
-    def init_editor(file)
+    def self.edit(file)
       case File.extname(file)
       when '.xls'
         ExcelEditor.new(file)
@@ -58,7 +56,7 @@ module SimpleSpreadsheet
       end
     end
 
-    def init_writer(file)
+    def self.write(file)
       case File.extname(file)
       when '.xls'
         ExcelWriter.new(file)

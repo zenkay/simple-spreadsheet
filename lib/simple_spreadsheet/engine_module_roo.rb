@@ -17,7 +17,7 @@ module EngineModuleRoo
   end
   
   def cell(row, col)
-    @engine(row, col)
+    @engine.cell(row, col)
   end
   
 end

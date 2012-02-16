@@ -8,8 +8,4 @@ class GenericSheet
     return @path
   end
   
-  # return sheets array
-  def sheets
-  end
-  
 end
