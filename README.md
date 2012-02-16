@@ -11,5 +11,4 @@ Add to your Gemfile and run the `bundle` command to install it.
  ```ruby
  gem "simple_spreadsheet"
  ```
-
 **Requires Ruby 1.9.2 or later.**
