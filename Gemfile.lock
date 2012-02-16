@@ -1,0 +1,60 @@
+PATH
+  remote: .
+  specs:
+    simple_spreadsheet (0.0.1.alpha)
+      roo
+      rubyXL
+      spreadsheet
+
+GEM
+  remote: http://rubygems.org/
+  specs:
+    addressable (2.2.6)
+    choice (0.1.4)
+    diff-lcs (1.1.3)
+    faraday (0.7.5)
+      addressable (~> 2.2.6)
+      multipart-post (~> 1.1.3)
+      rack (>= 1.1.0, < 2)
+    google-spreadsheet-ruby (0.1.6)
+      nokogiri (>= 1.4.3.1)
+      oauth (>= 0.3.6)
+      oauth2 (>= 0.5.0)
+    log4r (1.1.9)
+    multi_json (1.0.4)
+    multipart-post (1.1.4)
+    nokogiri (1.5.0)
+    oauth (0.4.5)
+    oauth2 (0.5.1)
+      faraday (~> 0.7.4)
+      multi_json (~> 1.0.3)
+    rack (1.4.1)
+    roo (1.10.1)
+      choice (>= 0.1.4)
+      google-spreadsheet-ruby (>= 0.1.5)
+      nokogiri (>= 1.5.0)
+      rubyzip (>= 0.9.4)
+      spreadsheet (> 0.6.4)
+      todonotes (>= 0.1.0)
+    rspec (2.6.0)
+      rspec-core (~> 2.6.0)
+      rspec-expectations (~> 2.6.0)
+      rspec-mocks (~> 2.6.0)
+    rspec-core (2.6.4)
+    rspec-expectations (2.6.0)
+      diff-lcs (~> 1.1.2)
+    rspec-mocks (2.6.0)
+    ruby-ole (1.2.11.2)
+    rubyXL (1.2.5)
+    rubyzip (0.9.5)
+    spreadsheet (0.6.5.9)
+      ruby-ole (>= 1.0)
+    todonotes (0.1.0)
+      log4r
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  rspec
+  simple_spreadsheet!

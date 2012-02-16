@@ -1,0 +1,14 @@
+# Simple Spredsheet
+
+Format and validate a URL attribute in Active Record. This is an example gem created for [RailsCasts episode #301](http://railscasts.com/episodes/301-extracting-a-ruby-gem).
+
+
+## Installation
+
+Add to your Gemfile and run the `bundle` command to install it.
+
+ ```ruby
+ gem "simple_spreadsheet"
+ ```
+
+**Requires Ruby 1.9.2 or later.**

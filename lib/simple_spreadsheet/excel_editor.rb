@@ -1,0 +1,3 @@
+class ExcelEditor < SpreadsheetEditor
+  
+end

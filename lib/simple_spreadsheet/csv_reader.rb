@@ -1,0 +1,3 @@
+class CsvReader < SpreadsheetReader
+  
+end

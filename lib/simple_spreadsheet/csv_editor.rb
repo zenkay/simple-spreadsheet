@@ -1,0 +1,3 @@
+class CsvEditor < SpreadsheetEditor
+  
+end

@@ -1,0 +1,3 @@
+class ExcelWriter < SpreadsheetWriter
+  
+end

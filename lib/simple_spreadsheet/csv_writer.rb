@@ -1,0 +1,3 @@
+class CsvWriter < SpreadsheetWriter
+  
+end

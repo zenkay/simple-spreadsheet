@@ -1,0 +1,3 @@
+class ExcelxmlEditor < SpreadsheetEditor
+  
+end

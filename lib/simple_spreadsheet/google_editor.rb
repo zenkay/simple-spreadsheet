@@ -1,0 +1,3 @@
+class GoogleEditor < SpreadsheetEditor
+  
+end

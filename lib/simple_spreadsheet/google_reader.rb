@@ -1,0 +1,3 @@
+class GoogleReader < SpreadsheetReader
+  
+end
