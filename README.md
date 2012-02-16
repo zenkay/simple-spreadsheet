@@ -3,9 +3,9 @@
 Recently a wrote a module to import raw data from Excel-like files to database and export it in various formats. To accomplish this i have to use different gems with different usage patterns so I decide to wrap them in a single simple gem. This is a spreadsheet reader and writer that (will) supports common formats: CSV (.csv), Excel (.xls, .xlsx), Open-office (.ods) and Google (online).
 
 Used gems:
-- Roo (http://roo.rubyforge.org/ https://github.com/hmcgowan/roo)
-- Spreadsheet
-- RubyXL
+-  Roo (http://roo.rubyforge.org/)
+-  Spreadsheet (http://spreadsheet.ch/)
+-  RubyXL (https://github.com/gilt/rubyXL)
 
 ## Installing
 
