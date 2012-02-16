@@ -1,7 +1,8 @@
-# Simple Spredsheet
+# It does not work yet :) Please be patient.
 
-Format and validate a URL attribute in Active Record. This is an example gem created for [RailsCasts episode #301](http://railscasts.com/episodes/301-extracting-a-ruby-gem).
+# Simple Spreadsheet
 
+Simple spreadsheet reader and writer for common formats: Excel (.xls, .xlsx and .xml), Open-office (.ods) and Google (online).
 
 ## Installation
 
