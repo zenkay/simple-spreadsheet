@@ -2,7 +2,13 @@
 
 # Simple Spreadsheet
 
-Simple spreadsheet reader and writer for common formats: CSV (.csv), Excel (.xls, .xlsx), Open-office (.ods) and Google (online).
+Simple spreadsheet reader and writer for common formats: CSV (.csv), Excel (.xls, .xlsx), Open-office (.ods) and Google (online). Use multiple gems to access to it.
+
+Used gems:
+* Roo (https://github.com/hmcgowan/roo)
+* Spreadsheet
+* 
+
 
 ## Installing
 
@@ -25,17 +31,22 @@ Add to your Gemfile and run the `bundle` command to install it.
     <th>Google</th>
   </tr>
   <tr>
-    <td>Works?</td>
-    <td>YES (Roo)</td>
-    <td>YES (Roo)</td>
-    <td>YES (Roo)</td>
-    <td>YES (Roo)</td>
-    <td>YES (Roo)</td>
+    <th>Supported</th>
+    <td>Yes (using Roo)</td>
+    <td>Yes (using Roo)</td>
+    <td>Yes (using Roo)</td>
+    <td>Yes (using Roo)</td>
+    <td>-</td>
   </tr>
 </table>
 
 ```ruby
-@workbook = SimpleSpreadsheet::SimpleSheet.read()
+s = SimpleSpreadsheet::SimpleSheet.read("my_spreadsheets_file.xls")
+s.select_worksheet = s.sheets.first
+s.first_row.upto(@workbook.last_row) do |line|
+  data1 = s.cell(line, 'A')
+  data2 = s.cell(line, 'C')
+end
 ```
 
 ## Writing Spreadsheet
@@ -50,17 +61,17 @@ Add to your Gemfile and run the `bundle` command to install it.
     <th>Google</th>
   </tr>
   <tr>
-    <td>Works?</td>
-    <td>NO</td>
-    <td>NO</td>
-    <td>NO</td>
-    <td>NO</td>
-    <td>NO</td>
+    <th>Supported</th>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
   </tr>
 </table>
 
 ```ruby
-@workbook = SimpleSpreadsheet::SimpleSheet.write()
+@workbook = SimpleSpreadsheet::SimpleSheet.write("my_spreadsheets_file.xls")
 ```
 
 ## Editing Spreadsheet
@@ -75,15 +86,15 @@ Add to your Gemfile and run the `bundle` command to install it.
     <th>Google</th>
   </tr>
   <tr>
-    <td>Works?</td>
-    <td>NO</td>
-    <td>NO</td>
-    <td>NO</td>
-    <td>NO</td>
-    <td>NO</td>
+    <th>Supported</th>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
   </tr>
 </table>
 
 ```ruby
-@workbook = SimpleSpreadsheet::SimpleSheet.edit()
+@workbook = SimpleSpreadsheet::SimpleSheet.edit("my_spreadsheets_file.xls")
 ```
