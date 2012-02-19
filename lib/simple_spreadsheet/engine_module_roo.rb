@@ -4,8 +4,12 @@ module EngineModuleRoo
     @engine.sheets
   end
 
-  def selected_sheet=(sheet)
-    @engine.default_sheet = sheet
+  def default_sheet=(sheet)
+    if sheet.is_a? Integer
+      @engine.default_sheet = @engine.sheets[sheet - 1]
+    else
+      @engine.default_sheet = sheet
+    end
   end
   
   def first_row
@@ -16,8 +20,20 @@ module EngineModuleRoo
     @engine.last_row
   end
   
-  def cell(row, col)
-    @engine.cell(row, col)
+  def cell(row, col, sheet=nil)
+    if sheet.is_a? Integer
+      @engine.cell(row, col, @engine.sheets[sheet - 1])
+    else
+      @engine.cell(row, col, sheet)
+    end
+  end
+
+  def celltype(row, col, sheet=nil)
+    if sheet.is_a? Integer
+      @engine.celltype(row, col, @engine.sheets[sheet - 1])
+    else
+      @engine.celltype(row, col, sheet)
+    end
   end
   
 end
