@@ -1,3 +1,0 @@
-class ExcelxmlReader < SpreadsheetReader
-
-end

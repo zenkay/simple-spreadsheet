@@ -1,4 +1,4 @@
-require 'simple_spreadsheet/engine_module_roo'
+require 'simple_spreadsheet/modules/roo_module'
 
 class OpenofficeReader < SpreadsheetReader
   
@@ -7,6 +7,6 @@ class OpenofficeReader < SpreadsheetReader
     @engine = Openoffice.new(@path) # Roo
   end
   
-  include EngineModuleRoo
+  include RooModule
 
 end

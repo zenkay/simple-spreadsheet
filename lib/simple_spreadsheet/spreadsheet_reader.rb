@@ -1,3 +1,0 @@
-class SpreadsheetReader < GenericSheet
-  
-end

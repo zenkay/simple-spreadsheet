@@ -2,28 +2,11 @@ require "simple_spreadsheet/version"
 
 module SimpleSpreadsheet
   
-  class SimpleSheet
-    
-    # READ_ONLY = "r"
-    # READ_AND_WRITE = "rw"
-    # WRITE_ONLY = "w"
-    # 
-    # def self.create(file, mode = READ_ONLY)
-    #   @mode = mode
-    #   case @mode
-    #   when READ_ONLY
-    #     self.init_reader(file)
-    #   when READ_AND_WRITE
-    #     self.init_editor(file)
-    #   when WRITE_ONLY
-    #     self.init_writer(file)
-    #   else
-    #     raise NotRecognizedModeException
-    #   end
-    # end
-    
-    def self.read(file)
-      case File.extname(file)
+  class Workbook
+        
+    def self.read(file, ext = nil)
+      ext = File.extname(file) if ext.nil?
+      case ext
       when '.xls'
         return ExcelReader.new(file)
       when '.xlsx'
@@ -32,15 +15,18 @@ module SimpleSpreadsheet
         return OpenofficeReader.new(file)
       when '.csv'
         return CsvReader.new(file)
-      when '.xml'
-        return ExcelxmlReader.new(file)
+      when '.csvx'
+        return CsvxReader.new(file)
+      when '.csvt'
+        return CsvtReader.new(file)
       else
-        return GoogleReader.new(file)
+        return nil
       end
     end
 
-    def self.edit(file)
-      case File.extname(file)
+    def self.edit(file, ext = nil)
+      ext = File.extname(file) if ext.nil?
+      case ext
       when '.xls'
         ExcelEditor.new(file)
       when '.xlsx'
@@ -49,15 +35,18 @@ module SimpleSpreadsheet
         OpenofficeEditor.new(file)
       when '.csv'
         CsvEditor.new(file)
-      when '.xml'
-        ExcelxmlEditor.new(file)
+      when '.csvz'
+        return CsvzEditor.new(file)
+      when '.csvt'
+        return CsvtEditor.new(file)
       else
-        GoogleEditor.new(file)
+        return nil
       end
     end
 
-    def self.write(file)
-      case File.extname(file)
+    def self.write(file, ext = nil)
+      ext = File.extname(file) if ext.nil?
+      case ext
       when '.xls'
         ExcelWriter.new(file)
       when '.xlsx'
@@ -66,10 +55,12 @@ module SimpleSpreadsheet
         OpenofficeWriter.new(file)
       when '.csv'
         CsvWriter.new(file)
-      when '.xml'
-        ExcelxmlWriter.new(file)
+      when '.csvz'
+        return CsvzWriter.new(file)
+      when '.csvt'
+        return CsvtWriter.new(file)
       else
-        GoogleWriter.new(file)
+        return nil
       end
     end
     
@@ -78,42 +69,46 @@ module SimpleSpreadsheet
   # General
   require 'simple_spreadsheet/generic_sheet'
 
-  # General for mode
-  require 'simple_spreadsheet/spreadsheet_reader'
-  require 'simple_spreadsheet/spreadsheet_editor'
-  require 'simple_spreadsheet/spreadsheet_writer'
+  # Extendend classes
+  require 'simple_spreadsheet/classes/excel_extended'
+  require 'simple_spreadsheet/classes/csv_extended'
+  require 'simple_spreadsheet/classes/csvx_extended'
+  require 'simple_spreadsheet/classes/csvt_extended'
 
-  # .csv (CSV)
-  require 'simple_spreadsheet/csv_reader'
-  require 'simple_spreadsheet/csv_editor'
-  require 'simple_spreadsheet/csv_writer'
+  # General for mode
+  require 'simple_spreadsheet/readers/spreadsheet_reader'
+  require 'simple_spreadsheet/editors/spreadsheet_editor'
+  require 'simple_spreadsheet/writers/spreadsheet_writer'
 
   # .xls (Excel 97-2003)
-  require 'simple_spreadsheet/excel_reader'
-  require 'simple_spreadsheet/excel_editor'
-  require 'simple_spreadsheet/excel_writer'
+  require 'simple_spreadsheet/readers/excel_reader'
+  require 'simple_spreadsheet/editors/excel_editor'
+  require 'simple_spreadsheet/writers/excel_writer'
 
   # .xlsx (Excel 2007-2010)
-  require 'simple_spreadsheet/excelx_reader'
-  require 'simple_spreadsheet/excelx_editor'
-  require 'simple_spreadsheet/excelx_writer'
-
-  # .xml (Excel XML)
-  require 'simple_spreadsheet/excelxml_reader'
-  require 'simple_spreadsheet/excelxml_editor'
-  require 'simple_spreadsheet/excelxml_writer'
+  require 'simple_spreadsheet/readers/excelx_reader'
+  require 'simple_spreadsheet/editors/excelx_editor'
+  require 'simple_spreadsheet/writers/excelx_writer'
 
   # .ods (Openoffice)
-  require 'simple_spreadsheet/openoffice_reader'
-  require 'simple_spreadsheet/openoffice_editor'
-  require 'simple_spreadsheet/openoffice_writer'
+  require 'simple_spreadsheet/readers/openoffice_reader'
+  require 'simple_spreadsheet/editors/openoffice_editor'
+  require 'simple_spreadsheet/writers/openoffice_writer'
 
-  # url (Google Spreadsheet Online)
-  require 'simple_spreadsheet/google_reader'
-  require 'simple_spreadsheet/google_editor'
-  require 'simple_spreadsheet/google_writer'
+  # .csv (CSV)
+  require 'simple_spreadsheet/readers/csv_reader'
+  require 'simple_spreadsheet/editors/csv_editor'
+  require 'simple_spreadsheet/writers/csv_writer'
+
+  # .csvx (CSV)
+  require 'simple_spreadsheet/readers/csvx_reader'
+
+  # .csvt (CSV)
+  require 'simple_spreadsheet/readers/csvt_reader'
+
   
 end
 
 # Gems
 require 'roo'
+

@@ -13,7 +13,7 @@ Used gems:
 Add to your Gemfile and run the `bundle` command to install it.
 
  ```ruby
- gem "simple_spreadsheet"
+ gem "simple-spreadsheet"
  ```
  
 **N.B. Requires Ruby 1.9.2 or later.**
@@ -25,88 +25,37 @@ Add to your Gemfile and run the `bundle` command to install it.
 Example:
 
 ```ruby
-s = SimpleSpreadsheet::SimpleSheet.read("my_spreadsheets_file.xls")
+s = SimpleSpreadsheet::Workbook.read("my_spreadsheets_file.xls")
 ```
 
 Supported formats:
 
 <table>
   <tr>
-    <th>CSV (.csv)</th>
     <th>Excel (.xls)</th>
     <th>Excelx (.xlsx)</th>
     <th>Openoffice (.ods)</th>
-    <th>Google</th>
-  </tr>
-  <tr>
-    <td>Not yet</td>
-    <td>Yes (using Roo)</td>
-    <td>Yes (using Roo)</td>
-    <td>Yes (using Roo)</td>
-    <td>Not yet</td>
-  </tr>
-</table>
-
-### Writing Spreadsheet
-
-Example:
-
-```ruby
-s = SimpleSpreadsheet::SimpleSheet.write("my_spreadsheets_file.xls")
-```
-
-Supported formats:
-
-<table>
-  <tr>
     <th>CSV (.csv)</th>
-    <th>Excel (.xls)</th>
-    <th>Excelx (.xlsx)</th>
-    <th>Openoffice (.ods)</th>
-    <th>Google</th>
+    <th>CSV Excel</th>
+    <th>Tab Separated</th>
   </tr>
   <tr>
-    <td>Not yet</td>
-    <td>Not yet</td>
+    <td>Yes (using Roo)</td>
+    <td>Yes (using Roo)</td>
+    <td>Yes (using Roo)</td>
     <td>Not yet</td>
     <td>Not yet</td>
     <td>Not yet</td>
   </tr>
 </table>
 
-### Editing Spreadsheet
-
-Example:
-
-```ruby
-s = SimpleSpreadsheet::SimpleSheet.edit("my_spreadsheets_file.xls")
-```
-
-Supported formats:
-
-<table>
-  <tr>
-    <th>CSV (.csv)</th>
-    <th>Excel (.xls)</th>
-    <th>Excelx (.xlsx)</th>
-    <th>Openoffice (.ods)</th>
-    <th>Google</th>
-  </tr>
-  <tr>
-    <td>Not yet</td>
-    <td>Not yet</td>
-    <td>Not yet</td>
-    <td>Not yet</td>
-    <td>Not yet</td>
-  </tr>
-</table>
 
 ## Recipes
 
 ### Get all data from some cols of first sheet of a XLS file
 
 ```ruby
-s = SimpleSpreadsheet::SimpleSheet.read("my_spreadsheets_file.xls")
+s = SimpleSpreadsheet::Workbook.read("my_spreadsheets_file.xls")
 s.select_worksheet = s.sheets.first
 s.first_row.upto(@workbook.last_row) do |line|
   data1 = s.cell(line, 1)
@@ -117,7 +66,7 @@ end
 ### Get all data from some cols of first sheet of a XLS file (option 2)
 
 ```ruby
-s = SimpleSpreadsheet::SimpleSheet.read("my_spreadsheets_file.xls")
+s = SimpleSpreadsheet::Workbook.read("my_spreadsheets_file.xls")
 s.first_row.upto(@workbook.last_row) do |line|
   data1 = s.cell(line, 1, 1)
   data2 = s.cell(line, 3, 1)
