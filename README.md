@@ -37,15 +37,15 @@ Supported formats:
     <th>Openoffice (.ods)</th>
     <th>CSV (.csv)</th>
     <th>CSV Excel</th>
-    <th>Tab Separated</th>
+    <th>CSV Tab Separated</th>
   </tr>
   <tr>
-    <td>Yes (using Roo)</td>
-    <td>Yes (using Roo)</td>
-    <td>Yes (using Roo)</td>
-    <td>Not yet</td>
-    <td>Not yet</td>
-    <td>Not yet</td>
+    <td>Yes</td>
+    <td>Yes</td>
+    <td>Yes</td>
+    <td>Yes</td>
+    <td>Yes</td>
+    <td>Yes</td>
   </tr>
 </table>
 
@@ -71,6 +71,18 @@ s.first_row.upto(@workbook.last_row) do |line|
   data1 = s.cell(line, 1, 1)
   data2 = s.cell(line, 3, 1)
 end
+```
+
+### Accessing CSV Excel (semicolon separated)
+
+```ruby
+s = SimpleSpreadsheet::Workbook.read("my_spreadsheets_file.csv", ".csvx")
+```
+
+### Accessing CSV Tab separated
+
+```ruby
+s = SimpleSpreadsheet::Workbook.read("my_spreadsheets_file.csv", ".csvt")
 ```
 
 ## Future plans
