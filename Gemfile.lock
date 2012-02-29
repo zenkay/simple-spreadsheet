@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    simple_spreadsheet (0.0.3.alpha)
+    simple-spreadsheet (0.0.4.alpha)
       roo (= 1.10.1)
       rubyXL (= 1.2.5)
       spreadsheet (= 0.6.5.9)
@@ -56,5 +56,5 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  rspec
-  simple_spreadsheet!
+  rspec (~> 2.6.0)
+  simple-spreadsheet!
