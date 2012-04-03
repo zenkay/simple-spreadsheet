@@ -1,4 +1,4 @@
-require "simple_spreadsheet/version"
+require "simple-spreadsheet/version"
 
 module SimpleSpreadsheet
   
@@ -67,48 +67,49 @@ module SimpleSpreadsheet
   end
   
   # General
-  require 'simple_spreadsheet/generic_sheet'
+  require 'simple-spreadsheet/generic_sheet'
 
   # Extendend classes
-  require 'simple_spreadsheet/classes/excel_extended'
-  require 'simple_spreadsheet/classes/csv_extended'
-  require 'simple_spreadsheet/classes/csvx_extended'
-  require 'simple_spreadsheet/classes/csvt_extended'
+  require 'simple-spreadsheet/classes/excel_extended'
+  require 'simple-spreadsheet/classes/csv_extended'
+  require 'simple-spreadsheet/classes/csvx_extended'
+  require 'simple-spreadsheet/classes/csvt_extended'
 
   # General for mode
-  require 'simple_spreadsheet/readers/spreadsheet_reader'
-  require 'simple_spreadsheet/editors/spreadsheet_editor'
-  require 'simple_spreadsheet/writers/spreadsheet_writer'
+  require 'simple-spreadsheet/readers/spreadsheet_reader'
+  require 'simple-spreadsheet/editors/spreadsheet_editor'
+  require 'simple-spreadsheet/writers/spreadsheet_writer'
 
   # .xls (Excel 97-2003)
-  require 'simple_spreadsheet/readers/excel_reader'
-  require 'simple_spreadsheet/editors/excel_editor'
-  require 'simple_spreadsheet/writers/excel_writer'
+  require 'simple-spreadsheet/readers/excel_reader'
+  require 'simple-spreadsheet/editors/excel_editor'
+  require 'simple-spreadsheet/writers/excel_writer'
 
   # .xlsx (Excel 2007-2010)
-  require 'simple_spreadsheet/readers/excelx_reader'
-  require 'simple_spreadsheet/editors/excelx_editor'
-  require 'simple_spreadsheet/writers/excelx_writer'
+  require 'simple-spreadsheet/readers/excelx_reader'
+  require 'simple-spreadsheet/editors/excelx_editor'
+  require 'simple-spreadsheet/writers/excelx_writer'
 
   # .ods (Openoffice)
-  require 'simple_spreadsheet/readers/openoffice_reader'
-  require 'simple_spreadsheet/editors/openoffice_editor'
-  require 'simple_spreadsheet/writers/openoffice_writer'
+  require 'simple-spreadsheet/readers/openoffice_reader'
+  require 'simple-spreadsheet/editors/openoffice_editor'
+  require 'simple-spreadsheet/writers/openoffice_writer'
 
   # .csv (CSV)
-  require 'simple_spreadsheet/readers/csv_reader'
-  require 'simple_spreadsheet/editors/csv_editor'
-  require 'simple_spreadsheet/writers/csv_writer'
+  require 'simple-spreadsheet/readers/csv_reader'
+  require 'simple-spreadsheet/editors/csv_editor'
+  require 'simple-spreadsheet/writers/csv_writer'
 
   # .csvx (CSV)
-  require 'simple_spreadsheet/readers/csvx_reader'
+  require 'simple-spreadsheet/readers/csvx_reader'
 
   # .csvt (CSV)
-  require 'simple_spreadsheet/readers/csvt_reader'
+  require 'simple-spreadsheet/readers/csvt_reader'
 
   
 end
 
 # Gems
 require 'roo'
+require 'iconv'
 

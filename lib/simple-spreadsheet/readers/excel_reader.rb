@@ -1,4 +1,4 @@
-require 'simple_spreadsheet/modules/roo_module'
+require 'simple-spreadsheet/modules/roo_module'
 
 class ExcelReader < SpreadsheetReader
   

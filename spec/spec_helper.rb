@@ -1,1 +1,1 @@
-require 'simple_spreadsheet'
+require 'simple-spreadsheet'

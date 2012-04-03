@@ -1,5 +1,5 @@
 # -*- encoding: utf-8 -*-
-require File.expand_path('../lib/simple_spreadsheet/version', __FILE__)
+require File.expand_path('../lib/simple-spreadsheet/version', __FILE__)
 
 Gem::Specification.new do |gem|
   gem.authors       = ["Andrea Mostosi"]
