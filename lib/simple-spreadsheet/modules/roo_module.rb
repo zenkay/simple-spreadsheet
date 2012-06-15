@@ -4,7 +4,7 @@ module RooModule
     @engine.sheets
   end
 
-  def default_sheet=(sheet)
+  def selected_sheet=(sheet)
     if sheet.is_a? Integer
       @engine.default_sheet = @engine.sheets[sheet - 1]
     else

@@ -4,7 +4,7 @@ class SpreadsheetReader < GenericSheet
     # return array of sheets manes
   end
 
-  def default_sheet=(sheet)
+  def selected_sheet=(sheet)
     # set default sheet
   end
   

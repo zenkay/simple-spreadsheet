@@ -29,11 +29,11 @@ describe SimpleSpreadsheet do
       @workbook.cell(1, 2, 2).should eq(2)
     end
     it "should read strings from other sheets (way 2)" do
-      @workbook.default_sheet = 2
+      @workbook.selected_sheet = 2
       @workbook.cell(1, 1).should eq("String2")
     end
     it "should read integer from other sheets (way 2)" do
-      @workbook.default_sheet = 2
+      @workbook.selected_sheet = 2
       @workbook.cell(1, 2).should eq(2)
     end
   end  
