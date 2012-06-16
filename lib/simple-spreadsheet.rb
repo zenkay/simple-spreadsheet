@@ -2,6 +2,8 @@ require "simple-spreadsheet/version"
 
 module SimpleSpreadsheet
   
+  require 'simple-spreadsheet/modules/roo_module'
+  
   class Workbook
         
     def self.read(file, ext = nil)
@@ -105,8 +107,7 @@ module SimpleSpreadsheet
 
   # .csvt (CSV)
   require 'simple-spreadsheet/readers/csvt_reader'
-
-  
+    
 end
 
 # Gems

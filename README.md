@@ -16,7 +16,7 @@ Add to your Gemfile and run the `bundle` command to install it.
  gem "simple-spreadsheet"
  ```
  
-**N.B. Requires Ruby 1.9.2 or later.**
+**N.B. Tested only with Ruby 1.9.2.**
 
 ## Basic functionality
 
@@ -25,6 +25,8 @@ Add to your Gemfile and run the `bundle` command to install it.
 Example:
 
 ```ruby
+require "simple-spreadsheet"
+
 s = SimpleSpreadsheet::Workbook.read("my_spreadsheets_file.xls")
 ```
 
@@ -58,8 +60,8 @@ Supported formats:
 require "simple-spreadsheet"
 
 s = SimpleSpreadsheet::Workbook.read("my_spreadsheets_file.xls")
-s.select_worksheet = s.sheets.first
-s.first_row.upto(@workbook.last_row) do |line|
+s.selected_sheet = s.sheets.first
+s.first_row.upto(s.last_row) do |line|
   data1 = s.cell(line, 1)
   data2 = s.cell(line, 3)
 end
@@ -71,7 +73,7 @@ end
 require "simple-spreadsheet"
 
 s = SimpleSpreadsheet::Workbook.read("my_spreadsheets_file.xls")
-s.first_row.upto(@workbook.last_row) do |line|
+s.first_row.upto(s.last_row) do |line|
   data1 = s.cell(line, 1, 1)
   data2 = s.cell(line, 3, 1)
 end
@@ -80,19 +82,23 @@ end
 ### Accessing CSV Excel (semicolon separated)
 
 ```ruby
+require "simple-spreadsheet"
+
 s = SimpleSpreadsheet::Workbook.read("my_spreadsheets_file.csv", ".csvx")
 ```
 
 ### Accessing CSV Tab separated
 
 ```ruby
+require "simple-spreadsheet"
+
 s = SimpleSpreadsheet::Workbook.read("my_spreadsheets_file.csv", ".csvt")
 ```
 
 ## Future plans
 
 - Reading support for all formats
-- More efficent reading for big spreadsheets (extending Roo)
+- More efficient reading for big spreadsheets (adding sequential reading to Roo standard methods)
 - Writing support for all formats
 - More reading functionalities
-- Edit support fo all formats
+- Edit support for all formats

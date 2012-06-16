@@ -1,5 +1,3 @@
-require 'simple-spreadsheet/modules/roo_module'
-
 class OpenofficeReader < SpreadsheetReader
   
   def initialize(file)

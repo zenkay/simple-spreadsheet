@@ -1,5 +1,3 @@
-require 'simple-spreadsheet/modules/roo_module'
-
 class CsvxReader < SpreadsheetReader
 
   def initialize(file)
