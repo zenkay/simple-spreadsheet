@@ -20,6 +20,14 @@ module RooModule
     @engine.last_row
   end
   
+  def first_column
+    @engine.first_column
+  end
+  
+  def last_column
+    @engine.last_column
+  end
+  
   def cell(row, col, sheet=nil)
     if sheet.is_a? Integer
       @engine.cell(row, col, @engine.sheets[sheet - 1])

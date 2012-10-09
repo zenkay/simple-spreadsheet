@@ -22,6 +22,12 @@ describe SimpleSpreadsheet do
     it "should read integer from first sheets" do
       @workbook.cell(1,2).should eq("1")
     end
+    it "should correctly count rows" do
+      @workbook.last_row.should eq(1)
+    end
+    it "should correctly count column" do
+      @workbook.last_column.should eq(2)
+    end
   end
   
 end

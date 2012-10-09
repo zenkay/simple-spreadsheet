@@ -36,6 +36,12 @@ describe SimpleSpreadsheet do
       @workbook.selected_sheet = 2
       @workbook.cell(1, 2).should eq(2)
     end
+    it "should correctly count rows" do
+      @workbook.last_row.should eq(1)
+    end
+    it "should correctly count column" do
+      @workbook.last_column.should eq(2)
+    end
   end
   
 end

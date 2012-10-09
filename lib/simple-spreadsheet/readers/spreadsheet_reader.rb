@@ -16,6 +16,14 @@ class SpreadsheetReader < GenericSheet
     # return last row index
   end
   
+  def first_column
+    # return first column index
+  end
+  
+  def last_column
+    # return last column index
+  end
+  
   def cell(row, col, sheet=nil)
     # return cell content
   end
