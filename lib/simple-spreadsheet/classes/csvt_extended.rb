@@ -2,6 +2,15 @@ require 'roo/generic_spreadsheet'
 require 'roo/csv'
 
 class CsvtExtended < Csv
+  
+  def foreach(sheet = nil, &block)
+    index = 1
+    CSV.foreach(@filename, col_sep: "\t") do |row|
+      yield(row, index)
+      index += 1
+    end
+  end
+  
   def read_cells(sheet=nil)
     sheet = @default_sheet unless sheet
     @cell_type = {} unless @cell_type

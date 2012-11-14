@@ -19,52 +19,52 @@ module SimpleSpreadsheet
         return CsvReader.new(file)
       when '.csvx'
         return CsvxReader.new(file)
-      when '.csvt'
+      when '.csvt', '.tsv'
         return CsvtReader.new(file)
       else
         return nil
       end
     end
 
-    def self.edit(file, ext = nil)
-      ext = File.extname(file) if ext.nil?
-      case ext
-      when '.xls'
-        ExcelEditor.new(file)
-      when '.xlsx'
-        ExcelxEditor.new(file)
-      when '.ods'
-        OpenofficeEditor.new(file)
-      when '.csv'
-        CsvEditor.new(file)
-      when '.csvz'
-        return CsvzEditor.new(file)
-      when '.csvt'
-        return CsvtEditor.new(file)
-      else
-        return nil
-      end
-    end
-
-    def self.write(file, ext = nil)
-      ext = File.extname(file) if ext.nil?
-      case ext
-      when '.xls'
-        ExcelWriter.new(file)
-      when '.xlsx'
-        ExcelxWriter.new(file)
-      when '.ods'
-        OpenofficeWriter.new(file)
-      when '.csv'
-        CsvWriter.new(file)
-      when '.csvz'
-        return CsvzWriter.new(file)
-      when '.csvt'
-        return CsvtWriter.new(file)
-      else
-        return nil
-      end
-    end
+    # def self.edit(file, ext = nil)
+    #   ext = File.extname(file) if ext.nil?
+    #   case ext
+    #   when '.xls'
+    #     ExcelEditor.new(file)
+    #   when '.xlsx'
+    #     ExcelxEditor.new(file)
+    #   when '.ods'
+    #     OpenofficeEditor.new(file)
+    #   when '.csv'
+    #     CsvEditor.new(file)
+    #   when '.csvz'
+    #     return CsvzEditor.new(file)
+    #   when '.csvt'
+    #     return CsvtEditor.new(file)
+    #   else
+    #     return nil
+    #   end
+    # end
+    # 
+    # def self.write(file, ext = nil)
+    #   ext = File.extname(file) if ext.nil?
+    #   case ext
+    #   when '.xls'
+    #     ExcelWriter.new(file)
+    #   when '.xlsx'
+    #     ExcelxWriter.new(file)
+    #   when '.ods'
+    #     OpenofficeWriter.new(file)
+    #   when '.csv'
+    #     CsvWriter.new(file)
+    #   when '.csvz'
+    #     return CsvzWriter.new(file)
+    #   when '.csvt'
+    #     return CsvtWriter.new(file)
+    #   else
+    #     return nil
+    #   end
+    # end
     
   end
   
@@ -73,6 +73,7 @@ module SimpleSpreadsheet
 
   # Extendend classes
   require 'simple-spreadsheet/classes/excel_extended'
+  require 'simple-spreadsheet/classes/excelx_extended'
   require 'simple-spreadsheet/classes/csv_extended'
   require 'simple-spreadsheet/classes/csvx_extended'
   require 'simple-spreadsheet/classes/csvt_extended'

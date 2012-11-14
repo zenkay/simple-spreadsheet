@@ -4,3 +4,4 @@ objects/
 logs/
 lib/.DS_Store
 .DS_Store
+*.gem

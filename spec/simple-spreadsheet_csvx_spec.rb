@@ -28,6 +28,13 @@ describe SimpleSpreadsheet do
     it "should correctly count column" do
       @workbook.last_column.should eq(2)
     end
+    it "should parse line by line" do
+      @workbook.foreach(@workbook.sheets.first) do |row, index|
+        row[0].should eq("String1")
+        row[1].should eq("1")
+        index.should eq(1)
+      end
+    end
   end
   
 end
