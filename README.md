@@ -34,6 +34,7 @@ Supported formats:
 
 <table>
   <tr>
+  	<th></th>
     <th>Excel (.xls)</th>
     <th>Excelx (.xlsx)</th>
     <th>Openoffice (.ods)</th>
@@ -42,9 +43,19 @@ Supported formats:
     <th>CSV Tab Separated</th>
   </tr>
   <tr>
+  	<td>Reading whole file</td>
     <td>Yes</td>
     <td>Yes</td>
     <td>Yes</td>
+    <td>Yes</td>
+    <td>Yes</td>
+    <td>Yes</td>
+  </tr>
+  <tr>
+  	<td>Reading line by line</td>
+    <td>Yes</td>
+    <td>-</td>
+    <td>-</td>
     <td>Yes</td>
     <td>Yes</td>
     <td>Yes</td>
@@ -92,7 +103,10 @@ s = SimpleSpreadsheet::Workbook.read("my_spreadsheets_file.csv", ".csvx")
 ```ruby
 require "simple-spreadsheet"
 
+# specify format
 s = SimpleSpreadsheet::Workbook.read("my_spreadsheets_file.csv", ".csvt")
+# use .tsv
+s = SimpleSpreadsheet::Workbook.read("my_spreadsheets_file.tsv")
 ```
 
 ## Future plans
