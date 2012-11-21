@@ -1,4 +1,4 @@
-# Simple Spreadsheet
+# Simple Spreadsheet [![Build Status](https://secure.travis-ci.org/zenkay/simple-spreadsheet.png?branch=master)](http://travis-ci.org/zenkay/simple-spreadsheet)
 
 Recently I wrote a module to import raw data from Excel-like files to database and export it in various formats. To accomplish this i have to use different gems with different usage patterns so I decide to wrap them in a single simple gem. This is a spreadsheet reader and writer that (will) supports common formats: CSV (.csv), Excel (.xls, .xlsx), Open-office (.ods) and Google (online).
 
