@@ -1,8 +1,5 @@
-require 'roo/generic_spreadsheet'
-require 'roo/excelx'
+class ExcelxExtended < Roo::Excelx
 
-class ExcelxExtended < Excelx
-  
     def foreach(sheet = nil, &block)
       sheet = @default_sheet unless sheet
       sheet_found = false
@@ -59,14 +56,14 @@ class ExcelxExtended < Excelx
           end
           if cell.name == 'v'
             if tmp_type == :time or tmp_type == :datetime
-              if cell.content.to_f >= 1.0 
-                if (cell.content.to_f - cell.content.to_f.floor).abs > 0.000001 
-                  tmp_type = :datetime 
+              if cell.content.to_f >= 1.0
+                if (cell.content.to_f - cell.content.to_f.floor).abs > 0.000001
+                  tmp_type = :datetime
                 else
                   tmp_type = :date
                 end
               else
-              end 
+              end
             end
             excelx_type = [:numeric_or_formula,format.to_s]
             excelx_value = cell.content
@@ -116,5 +113,5 @@ class ExcelxExtended < Excelx
       @cells_read[sheet] = true
 
     end
-  
+
 end

@@ -1,20 +1,17 @@
-require 'roo/generic_spreadsheet'
-require 'roo/excel'
+class ExcelExtended < Roo::Excel
 
-class ExcelExtended < Excel
-  
   def foreach(sheet=nil, &block)
     sheet = @default_sheet unless sheet
     raise ArgumentError, "Error: sheet '#{sheet||'nil'}' not valid" if @default_sheet == nil and sheet==nil
     raise RangeError unless self.sheets.include? sheet
-    
+
     if @cells_read[sheet]
       raise "sheet #{sheet} already read"
     end
-    
+
     worksheet = @workbook.worksheet(sheet_no(sheet))
     row_index=1
-    worksheet.each(0) do |row| 
+    worksheet.each(0) do |row|
       row_content = []
       (0..row.size).each do |cell_index|
         cell = row.at(cell_index)
@@ -36,5 +33,5 @@ class ExcelExtended < Excel
       row_index += 1
     end # worksheet
   end
-  
+
 end

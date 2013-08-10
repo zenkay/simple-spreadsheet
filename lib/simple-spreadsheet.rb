@@ -1,11 +1,12 @@
 require "simple-spreadsheet/version"
+require 'roo'
 
 module SimpleSpreadsheet
-  
+
   require 'simple-spreadsheet/modules/roo_module'
-  
+
   class Workbook
-        
+
     def self.read(file, ext = nil)
       ext = File.extname(file) if ext.nil?
       case ext
@@ -45,7 +46,7 @@ module SimpleSpreadsheet
     #     return nil
     #   end
     # end
-    # 
+    #
     # def self.write(file, ext = nil)
     #   ext = File.extname(file) if ext.nil?
     #   case ext
@@ -65,9 +66,9 @@ module SimpleSpreadsheet
     #     return nil
     #   end
     # end
-    
+
   end
-  
+
   # General
   require 'simple-spreadsheet/generic_sheet'
 
@@ -108,10 +109,13 @@ module SimpleSpreadsheet
 
   # .csvt (CSV)
   require 'simple-spreadsheet/readers/csvt_reader'
-    
+
 end
 
 # Gems
 require 'roo'
-require 'iconv'
+
+if RUBY_VERSION < '1.9'
+  require 'iconv'
+end
 
