@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    simple-spreadsheet (0.1.5)
+    simple-spreadsheet (0.2.0)
       roo (= 1.11.2)
       rubyXL (= 1.2.5)
       spreadsheet (= 0.6.5.9)
