@@ -20,6 +20,7 @@ Gem::Specification.new do |gem|
   gem.add_development_dependency "rake", "~> 0.9.2.2"
   gem.add_runtime_dependency "zip"
   gem.add_runtime_dependency "roo", "1.11.2"
+  gem.add_runtime_dependency "zip"
   gem.add_runtime_dependency "spreadsheet", "0.6.5.9"
   gem.add_runtime_dependency "rubyXL", "1.2.5"
 end
