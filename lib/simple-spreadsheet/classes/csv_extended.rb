@@ -1,4 +1,4 @@
-class CsvExtended < Roo::Csv
+class CsvExtended < Roo::CSV
 
   def foreach(sheet = nil, &block)
     index = 1

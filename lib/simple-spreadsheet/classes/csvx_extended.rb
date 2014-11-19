@@ -1,4 +1,4 @@
-class CsvxExtended < Roo::Csv
+class CsvxExtended < Roo::CSV
 
   def foreach(sheet = nil, &block)
     index = 1
@@ -9,15 +9,14 @@ class CsvxExtended < Roo::Csv
   end
 
   def read_cells(sheet=nil)
-    sheet = @default_sheet unless sheet
-    @cell_type = {} unless @cell_type
-    @cell = {} unless @cell
+    sheet ||= @default_sheet
+    return if @cells_read[sheet]
     @first_row[sheet] = 1
     @last_row[sheet] = 0
     @first_column[sheet] = 1
     @last_column[sheet] = 1
     rownum = 1
-    CSV.foreach(@filename, {:col_sep => ";"}) do |row|
+    each_row csv_options.merge(col_sep: ";") do |row|
       row.each_with_index do |elem,i|
         @cell[[rownum,i+1]] = cell_postprocessing rownum,i+1, elem
         @cell_type[[rownum,i+1]] = celltype_class @cell[[rownum,i+1]]
@@ -30,41 +29,26 @@ class CsvxExtended < Roo::Csv
     end
     @cells_read[sheet] = true
     #-- adjust @first_row if neccessary
-    loop do
-      if !row(@first_row[sheet]).any? and @first_row[sheet] < @last_row[sheet]
-        @first_row[sheet] += 1
-      else
-        break
-      end
+    while !row(@first_row[sheet]).any? and @first_row[sheet] < @last_row[sheet]
+      @first_row[sheet] += 1
     end
     #-- adjust @last_row if neccessary
-    loop do
-      if !row(@last_row[sheet]).any? and @last_row[sheet] and
-          @last_row[sheet] > @first_row[sheet]
-        @last_row[sheet] -= 1
-      else
-        break
-      end
+    while !row(@last_row[sheet]).any? and @last_row[sheet] and
+        @last_row[sheet] > @first_row[sheet]
+      @last_row[sheet] -= 1
     end
     #-- adjust @first_column if neccessary
-    loop do
-      if !column(@first_column[sheet]).any? and
+    while !column(@first_column[sheet]).any? and
           @first_column[sheet] and
           @first_column[sheet] < @last_column[sheet]
-        @first_column[sheet] += 1
-      else
-        break
-      end
+      @first_column[sheet] += 1
     end
     #-- adjust @last_column if neccessary
-    loop do
-      if !column(@last_column[sheet]).any? and
+    while !column(@last_column[sheet]).any? and
           @last_column[sheet] and
           @last_column[sheet] > @first_column[sheet]
-        @last_column[sheet] -= 1
-      else
-        break
-      end
+      @last_column[sheet] -= 1
     end
   end
+
 end
