@@ -2,7 +2,6 @@
 require 'spec_helper'
 
 describe SimpleSpreadsheet do
-  
   describe "Open CSV (.csvt) file read-only mode" do
     before do
       @workbook = SimpleSpreadsheet::Workbook.read(File.join(File.dirname(__FILE__), "fixtures/file.csvt"))
@@ -36,5 +35,4 @@ describe SimpleSpreadsheet do
       end
     end
   end
-  
 end
