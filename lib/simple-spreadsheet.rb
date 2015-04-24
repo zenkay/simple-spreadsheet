@@ -8,8 +8,8 @@ module SimpleSpreadsheet
   class Workbook
 
     def self.read(file, ext = nil)
-      file = file.to_s
-      ext = File.extname(file) if ext.nil?
+      file  = file.to_s
+      ext ||= File.extname(file)
       case ext
       when '.xls'
         return ExcelReader.new(file)
