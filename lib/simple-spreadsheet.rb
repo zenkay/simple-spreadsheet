@@ -12,19 +12,19 @@ module SimpleSpreadsheet
       ext ||= File.extname(file)
       case ext
       when '.xls'
-        return ExcelReader.new(file)
+        ExcelReader.new(file)
       when '.xlsx'
-        return ExcelxReader.new(file)
+        ExcelxReader.new(file)
       when '.ods'
-        return OpenofficeReader.new(file)
+        OpenofficeReader.new(file)
       when '.csv'
-        return CsvReader.new(file)
+        CsvReader.new(file)
       when '.csvx'
-        return CsvxReader.new(file)
+        CsvxReader.new(file)
       when '.csvt', '.tsv'
-        return CsvtReader.new(file)
+        CsvtReader.new(file)
       else
-        return nil
+        nil
       end
     end
 
