@@ -4,15 +4,21 @@
 
 A spreadsheet reader and (in the future) writer that supports common formats: CSV (.csv), Excel (.xls, .xlsx), Open-office (.ods) and Google (online).
 
-## Setup
+## Installation
 
-Add to your Gemfile and run the `bundle` command to install it.
+Add this line to your application's Gemfile:
 
- ```ruby
- gem "simple-spreadsheet"
- ```
+```
+gem 'simple-spreadsheet'
+```
 
-## Functionality
+And then execute:
+
+```
+$ bundle install
+```
+
+## Functionalities
 
 ### Reading Spreadsheet
 
