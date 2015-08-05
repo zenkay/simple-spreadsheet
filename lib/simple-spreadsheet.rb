@@ -1,5 +1,6 @@
 require "simple-spreadsheet/version"
 require 'roo'
+require 'roo-xls'
 
 module SimpleSpreadsheet
 
