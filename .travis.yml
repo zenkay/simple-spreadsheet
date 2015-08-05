@@ -7,11 +7,6 @@ rvm:
   - jruby
   - rbx-2.4.1
   - rbx-2.5.2
-jdk:
-  - openjdk7
-  - oraclejdk7
-  - oraclejdk8
-  - openjdk6
 allow_failures:
   - jruby
   - rbx-2.4.1
