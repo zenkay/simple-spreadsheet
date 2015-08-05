@@ -119,8 +119,8 @@ s = SimpleSpreadsheet::Workbook.read("my_spreadsheets_file.tsv")
 
 ## Credits
 
-Roo (http://roo.rubyforge.org/)
-SimpleZSLWriter (http://rubyforge.org/projects/simplxlsxwriter/)
-Spreadsheet (http://rubyforge.org/projects/spreadsheet/)
-XLSX (http://rubygems.org/gems/xlsx)
-WriteExcel (https://github.com/cxn03651/writeexcel/)
+- Roo (http://roo.rubyforge.org/)
+- Spreadsheet (http://rubyforge.org/projects/spreadsheet/)
+- SimpleZSLWriter (http://rubyforge.org/projects/simplxlsxwriter/)
+- XLSX (http://rubygems.org/gems/xlsx)
+- WriteExcel (https://github.com/cxn03651/writeexcel/)
