@@ -29,6 +29,7 @@ module RooModule
   end
 
   def cell(row, col, sheet=nil)
+    sheet = @engine.default_sheet if sheet.nil?
     if sheet.is_a? Integer
       @engine.cell(row, col, @engine.sheets[sheet - 1])
     else

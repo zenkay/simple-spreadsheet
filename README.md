@@ -1,24 +1,18 @@
-# Simple Spreadsheet [![Build Status](https://secure.travis-ci.org/zenkay/simple-spreadsheet.png?branch=master)](http://travis-ci.org/zenkay/simple-spreadsheet)
+# Simple Spreadsheet 
 
-Recently I wrote a module to import raw data from Excel-like files to database and export it in various formats. To accomplish this i have to use different gems with different usage patterns so I decide to wrap them in a single simple gem. This is a spreadsheet reader and writer that (will) supports common formats: CSV (.csv), Excel (.xls, .xlsx), Open-office (.ods) and Google (online).
+[![Code Climate](https://codeclimate.com/github/zenkay/simple-spreadsheet/badges/gpa.svg)](https://codeclimate.com/github/zenkay/simple-spreadsheet) [![Travis CI](https://travis-ci.org/zenkay/simple-spreadsheet.svg?branch=master)](https://travis-ci.org/zenkay/simple-spreadsheet) [![Gem Version](https://badge.fury.io/rb/dandelionapi.svg)](http://badge.fury.io/rb/dandelionapi) [![Coverage Status](https://coveralls.io/repos/github/zenkay/simple-spreadsheet/badge.svg?branch=master)](https://coveralls.io/github/zenkay/simple-spreadsheet?branch=master)
 
-Used gems: 
+A spreadsheet reader and (in the future) writer that supports common formats: CSV (.csv), Excel (.xls, .xlsx), Open-office (.ods) and Google (online).
 
-- Roo (http://roo.rubyforge.org/)
-- Spreadsheet (http://spreadsheet.ch/)
-- RubyXL (https://github.com/gilt/rubyXL)
-
-## Installing
+## Setup
 
 Add to your Gemfile and run the `bundle` command to install it.
 
  ```ruby
  gem "simple-spreadsheet"
  ```
- 
-**N.B. Tested only with Ruby 1.9.2.**
 
-## Basic functionality
+## Functionality
 
 ### Reading Spreadsheet
 
@@ -116,3 +110,11 @@ s = SimpleSpreadsheet::Workbook.read("my_spreadsheets_file.tsv")
 - Writing support for all formats
 - More reading functionalities
 - Edit support for all formats
+
+## Credits
+
+Roo (http://roo.rubyforge.org/)
+SimpleZSLWriter (http://rubyforge.org/projects/simplxlsxwriter/)
+Spreadsheet (http://rubyforge.org/projects/spreadsheet/)
+XLSX (http://rubygems.org/gems/xlsx)
+WriteExcel (https://github.com/cxn03651/writeexcel/)
