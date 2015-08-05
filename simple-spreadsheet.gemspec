@@ -18,6 +18,7 @@ Gem::Specification.new do |gem|
   # specify any dependencies here; for example:
   gem.add_development_dependency "rspec", "~> 2.6.0"
   gem.add_development_dependency "rake", "~> 0.9.2.2"
-  gem.add_runtime_dependency "roo", ">= 1.13"
+  gem.add_runtime_dependency "roo", ">= 2.1.1"
   gem.add_runtime_dependency "roo-xls", ">= 1.0.0"
+  gem.add_runtime_dependency "roo-google", ">= 1.0.0"
 end
