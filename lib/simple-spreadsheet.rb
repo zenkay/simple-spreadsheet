@@ -10,7 +10,7 @@ module SimpleSpreadsheet
 
     def self.read(file, ext = nil)
       file  = file.to_s
-      ext ||= File.extname(file)
+      ext ||= File.extname(file).downcase
       case ext
       when '.xls'
         ExcelReader.new(file)
