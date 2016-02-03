@@ -1,6 +1,6 @@
 # Simple Spreadsheet 
 
-[![Code Climate](https://codeclimate.com/github/zenkay/simple-spreadsheet/badges/gpa.svg)](https://codeclimate.com/github/zenkay/simple-spreadsheet) [![Travis CI](https://travis-ci.org/zenkay/simple-spreadsheet.svg?branch=master)](https://travis-ci.org/zenkay/simple-spreadsheet) [![Gem Version](https://badge.fury.io/rb/dandelionapi.svg)](http://badge.fury.io/rb/dandelionapi) [![Coverage Status](https://coveralls.io/repos/github/zenkay/simple-spreadsheet/badge.svg?branch=master)](https://coveralls.io/github/zenkay/simple-spreadsheet?branch=master)
+[![Code Climate](https://codeclimate.com/github/zenkay/simple-spreadsheet/badges/gpa.svg)](https://codeclimate.com/github/zenkay/simple-spreadsheet) [![Travis CI](https://travis-ci.org/zenkay/simple-spreadsheet.svg?branch=master)](https://travis-ci.org/zenkay/simple-spreadsheet) [![Gem Version](https://badge.fury.io/rb/simple-spreadsheet.svg)](http://badge.fury.io/rb/dandelionapi) [![Coverage Status](https://coveralls.io/repos/github/zenkay/simple-spreadsheet/badge.svg?branch=master)](https://coveralls.io/github/zenkay/simple-spreadsheet?branch=master)
 
 A spreadsheet reader and (in the future) writer that supports common formats: CSV (.csv), Excel (.xls, .xlsx), Open-office (.ods) and Google (online).
 
