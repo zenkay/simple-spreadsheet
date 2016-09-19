@@ -9,7 +9,5 @@ rvm:
   - rbx-2.5.2
 allow_failures:
   - jruby
-  - rbx-2.4.1
-  - rbx-2.5.2
 before_install: gem install bundler -v 1.10.5
 sudo: false
