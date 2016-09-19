@@ -5,8 +5,6 @@ rvm:
   - ruby-2.1.5
   - ruby-2.2.1
   - jruby
-  - rbx-2.4.1
-  - rbx-2.5.2
 allow_failures:
   - jruby
 before_install: gem install bundler -v 1.10.5
