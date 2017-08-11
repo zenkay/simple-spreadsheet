@@ -21,5 +21,5 @@ Gem::Specification.new do |gem|
   gem.add_development_dependency "rake", "~> 10.1"
   gem.add_development_dependency "rspec","~> 3.3"
   gem.add_runtime_dependency "roo", "~> 2.4"
-  gem.add_runtime_dependency "roo-xls", "~> 1.0"
+  gem.add_runtime_dependency "roo-xls", "~> 1.1"
 end
