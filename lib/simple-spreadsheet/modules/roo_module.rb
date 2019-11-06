@@ -38,6 +38,7 @@ module RooModule
   end
 
   def celltype(row, col, sheet=nil)
+    sheet = @engine.default_sheet if sheet.nil?
     if sheet.is_a? Integer
       @engine.celltype(row, col, @engine.sheets[sheet - 1])
     else
