@@ -9,11 +9,10 @@ GEM
   remote: http://rubygems.org/
   specs:
     diff-lcs (1.2.5)
-    mini_portile2 (2.1.0)
-    nokogiri (1.6.8)
-      mini_portile2 (~> 2.1.0)
-      pkg-config (~> 1.1.7)
-    pkg-config (1.1.7)
+    mini_portile2 (2.4.0)
+    nokogiri (1.10.5)
+      mini_portile2 (~> 2.4.0)
+    nokogiri (1.10.5-java)
     rake (10.4.2)
     roo (2.5.1)
       nokogiri (~> 1)
